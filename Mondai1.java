@@ -1,10 +1,13 @@
+ï»¿package mondai;
 public class Mondai1 {
 
 	public static void main(String[] args) {
-		double jissu = Double.parseDouble(args[0]);
-		int keta = Integer.parseInt(args[1]);	//lÌŒÜ“üŒã‚Ì”‚ªlÌŒÜ“ü‚³‚ê‚Ä‚é‚ªAˆÓ}‚µ‚½‚Æ‚±‚ë‚ÅØ‚ê‚Ä‚¢‚È‚¢
+		double jissu = CastUtil.castdouble(args[0]);
+		int keta = CastUtil.castint(args[1]);	//å››æ¨äº”å…¥å¾Œã®æ•°ãŒå››æ¨äº”å…¥ã•ã‚Œã¦ã‚‹ãŒã€æ„å›³ã—ãŸã¨ã“ã‚ã§åˆ‡ã‚Œã¦ã„ãªã„
 
-		System.out.println(jissu * (Math.pow(10, keta) + 0.5)/Math.pow(10, keta));
+		System.out.println(jissu * (Math.pow(10, keta) + 0.5)/Math.pow
+
+(10, keta));
 
 	}
 }
