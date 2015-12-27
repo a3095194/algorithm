@@ -1,4 +1,6 @@
-public class Mondai8 {
+package mondai;
+
+public class Mondai8{
 
 	public static void main(String[] args) {
 		int t[][] = new int[5][5];
