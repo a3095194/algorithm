@@ -5,9 +5,8 @@ import jp.ditgroup.common.NumberUtil;
 
 /**
  * 四捨五入をするクラス</h3> コマンドラインで入力された実数を入力された桁数に四捨五入します。
- *
  */
-public class Rounding {
+public class Rounder {
 	/**
 	 * 数字以外が入力されていないかの入力チェック
 	 */
@@ -18,41 +17,45 @@ public class Rounding {
 		if (!NumberUtil.isInt(args[1])) {
 			System.out.println("第二引数に数字以外の文字列が入力されました");
 		}
-		System.out.println(getRound(args));
+		System.out.println(calculation(args[0], args[1]));
 	}
 
 	/**
 	 * 四捨五入の処理
-	 * 
-	 * @param コマンドライン引数1
-	 * @return 四捨五入された数値
+	 *
+	 * @param value
+	 *            四捨五入する数値
+	 * @param multiPlier
+	 *            四捨五入したい桁数
+	 * @return result 四捨五入された数値
 	 */
-	public static double getRound(String[] args) {
+	public static double calculation(String value, String multiPlier) {
 		// コマンドラインからくるString型の値をdouble型に変換
-		double jissu = CastUtil.strToDouble(args[0]);
-		double result = jissu * getPow("10", args[1]) + 0.5;
+		double jissu = CastUtil.strToDouble(value);
+		// コマンドラインからくるString型の値をint型に変換
+		int multiplier = CastUtil.strToInt(multiPlier);
+		double powResult = pow(10, multiplier);
+		double trimJissu = jissu * powResult + 0.5;
 		// 小数を整数に変換
-		int seisu = (int) result;
-		double answer = (double) seisu / getPow("10", args[1]);
-		return answer;
+		int seisu = (int) trimJissu;
+		double result = (double) seisu / powResult;
+		return result;
 	}
 
 	/**
 	 * べき乗の計算
-	 * 
-	 * @param origin
-	 *            元の数字
-	 * @param number
-	 *            乗数
-	 * @return 計算結果
+	 *
+	 * @param jissu
+	 *            実数
+	 * @param multiplier
+	 *            四捨五入したい桁数
+	 * @return power べき乗計算結果
 	 */
-	public static int getPow(String value, String multiPlier) {
+	public static double pow(double jissu, int multiPlier) {
 		// べき乗を計算
-		int power = 1;
-		int origin = Integer.parseInt(value);
-		int number = Integer.parseInt(multiPlier);
-		for (int i = 1; i <= number; i++) {
-			power = power * origin;
+		double power = 1;
+		for (int i = 1; i <= multiPlier; i++) {
+			power = power * jissu;
 		}
 		return power;
 	}
