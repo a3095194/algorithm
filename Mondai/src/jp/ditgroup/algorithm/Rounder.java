@@ -1,58 +1,58 @@
-package jp.ditgroup.algorithm;
+ï»¿package jp.ditgroup.algorithm;
 
 import jp.ditgroup.common.CastUtil;
 import jp.ditgroup.common.NumberUtil;
 
 /**
- * lÌŒÜ“ü‚ğ‚·‚éƒNƒ‰ƒX</h3> ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Å“ü—Í‚³‚ê‚½À”‚ğ“ü—Í‚³‚ê‚½Œ…”‚ÉlÌŒÜ“ü‚µ‚Ü‚·B
+ * å››æ¨äº”å…¥ã‚’ã™ã‚‹ã‚¯ãƒ©ã‚¹ ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã§å…¥åŠ›ã•ã‚ŒãŸå®Ÿæ•°ã‚’å…¥åŠ›ã•ã‚ŒãŸæ¡æ•°ã«å››æ¨äº”å…¥ã—ã¾ã™ã€‚
  */
 public class Rounder {
 	/**
-	 * ”šˆÈŠO‚ª“ü—Í‚³‚ê‚Ä‚¢‚È‚¢‚©‚Ì“ü—Íƒ`ƒFƒbƒN
+	 * æ•°å­—ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¦ã„ãªã„ã‹ã®å…¥åŠ›ãƒã‚§ãƒƒã‚¯
 	 */
 	public static void main(String[] args) {
 		if (!NumberUtil.isDouble(args[0])) {
-			System.out.println("‘æˆêˆø”‚É”šˆÈŠO‚Ì•¶š—ñ‚ª“ü—Í‚³‚ê‚Ü‚µ‚½");
+			System.out.println("ç¬¬ä¸€å¼•æ•°ã«æ•°å­—ä»¥å¤–ã®æ–‡å­—åˆ—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ");
 		}
 		if (!NumberUtil.isInt(args[1])) {
-			System.out.println("‘æ“ñˆø”‚É”šˆÈŠO‚Ì•¶š—ñ‚ª“ü—Í‚³‚ê‚Ü‚µ‚½");
+			System.out.println("ç¬¬äºŒå¼•æ•°ã«æ•°å­—ä»¥å¤–ã®æ–‡å­—åˆ—ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ");
 		}
 		System.out.println(calculation(args[0], args[1]));
 	}
 
 	/**
-	 * lÌŒÜ“ü‚Ìˆ—
+	 * å››æ¨äº”å…¥ã®å‡¦ç†
 	 *
 	 * @param value
-	 *            lÌŒÜ“ü‚·‚é”’l
+	 *            å››æ¨äº”å…¥ã™ã‚‹æ•°å€¤
 	 * @param multiPlier
-	 *            lÌŒÜ“ü‚µ‚½‚¢Œ…”
-	 * @return result lÌŒÜ“ü‚³‚ê‚½”’l
+	 *            å››æ¨äº”å…¥ã—ãŸã„æ¡æ•°
+	 * @return result å››æ¨äº”å…¥ã•ã‚ŒãŸæ•°å€¤
 	 */
 	public static double calculation(String value, String multiPlier) {
-		// ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚©‚ç‚­‚éStringŒ^‚Ì’l‚ğdoubleŒ^‚É•ÏŠ·
+		// å››æ¨äº”å…¥ã™ã‚‹æ•°å€¤ã‚’ã€å››æ¨äº”å…¥ã™ã‚‹ãŸã‚ã€doubleå‹ã«å¤‰æ›
 		double jissu = CastUtil.strToDouble(value);
-		// ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚©‚ç‚­‚éStringŒ^‚Ì’l‚ğintŒ^‚É•ÏŠ·
+		// å››æ¨äº”å…¥ã—ãŸã„æ¡æ•°ã‚’pow ã«æ¸¡ã™ç‚ºã€intå‹ã«å¤‰æ›
 		int multiplier = CastUtil.strToInt(multiPlier);
 		double powResult = pow(10, multiplier);
 		double trimJissu = jissu * powResult + 0.5;
-		// ¬”‚ğ®”‚É•ÏŠ·
+		// å°æ•°ã‚’æ•´æ•°ã«å¤‰æ›
 		int seisu = (int) trimJissu;
 		double result = (double) seisu / powResult;
 		return result;
 	}
 
 	/**
-	 * ‚×‚«æ‚ÌŒvZ
+	 * ã¹ãä¹—ã®è¨ˆç®—
 	 *
 	 * @param jissu
-	 *            À”
+	 *            å®Ÿæ•°
 	 * @param multiplier
-	 *            lÌŒÜ“ü‚µ‚½‚¢Œ…”
-	 * @return power ‚×‚«æŒvZŒ‹‰Ê
+	 *            å››æ¨äº”å…¥ã—ãŸã„æ¡æ•°
+	 * @return power ã¹ãä¹—è¨ˆç®—çµæœ
 	 */
 	public static double pow(double jissu, int multiPlier) {
-		// ‚×‚«æ‚ğŒvZ
+		// ã¹ãä¹—ã‚’è¨ˆç®—
 		double power = 1;
 		for (int i = 1; i <= multiPlier; i++) {
 			power = power * jissu;
