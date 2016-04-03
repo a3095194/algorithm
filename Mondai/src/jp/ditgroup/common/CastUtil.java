@@ -1,6 +1,6 @@
-package jp.ditgroup.common;
+ï»¿package jp.ditgroup.common;
 
-//StringŒ^‚ğintAdoubleŒ^‚É•ÏŠ·‚µ‚Ü‚·
+//Stringå‹ã‚’intã€doubleå‹ã«å¤‰æ›ã—ã¾ã™
 public class CastUtil {
 	public static int strToInt(String i) {
 		return Integer.parseInt(i);

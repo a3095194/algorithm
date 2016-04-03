@@ -1,4 +1,4 @@
-package jp.ditgroup.algorithm;
+﻿package jp.ditgroup.algorithm;
 
 import jp.ditgroup.common.NumberUtil;
 

@@ -1,4 +1,4 @@
-package jp.ditgroup.common;
+﻿package jp.ditgroup.common;
 
 public class NumberUtil {
 	public static boolean isInt(String str) {

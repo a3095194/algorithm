@@ -11,14 +11,14 @@ public class RohrerIndex {
 	 * 数字以外が入力されていないかの入力チェック
 	 */
 	public static void main(String[] args) {
-		double height = CastUtil.strToDouble(args[0]);
-		double weight = CastUtil.strToDouble(args[1]);
 		if (!NumberUtil.isDouble(args[0])) {
 			System.out.println("第一引数に数字以外の文字列が入力されました");
 		}
 		if (!NumberUtil.isDouble(args[1])) {
 			System.out.println("第二引数に数字以外の文字列が入力されました");
 		}
+		double height = CastUtil.strToDouble(args[0]);
+		double weight = CastUtil.strToDouble(args[1]);
 		double rohrer = calculateRohrer(height, weight);
 		if (rohrer < 100) {
 			System.out.println("痩せすぎ");
