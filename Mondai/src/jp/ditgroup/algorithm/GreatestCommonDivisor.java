@@ -25,10 +25,8 @@ public class GreatestCommonDivisor {
 		if (!NumberUtil.isNotZero(args[1])) {
 			System.out.println("第二引数に0が入力されました");
 		}
-		int[] num = new int[2];
-		for (int i = 0; i < args.length; i++) {
-			num[i] = CastUtil.strToInt(args[i]);
-		}
-		System.out.println("最大公約数は " + CalculateCommonDivisor.getCommonDivisor(num[0], num[1]) + " です");
+		int big = CastUtil.strToInt(args[0]);
+		int small = CastUtil.strToInt(args[1]);
+		System.out.println("最大公約数は " + CalculateCommonDivisor.getCommonDivisor(big, small) + " です");
 	}
 }
