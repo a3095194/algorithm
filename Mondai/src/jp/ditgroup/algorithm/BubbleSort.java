@@ -14,7 +14,6 @@ public class BubbleSort {
 	/**
 	 * ソート処理(小さい順)
 	 *
-	 * @param
 	 * @return ソート後の配列
 	 */
 	public static int[] getSortArray() {
