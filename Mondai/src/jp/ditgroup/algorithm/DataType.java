@@ -10,12 +10,12 @@ public class DataType {
 	 */
 	public static void main(String[] args) {
 		int type[][] = executeClassification();
-		for (int i = 0; i < type[0].length; i++) {
+		for (int i = 0, num = type[0].length; i < num; i++) {
 			System.out.print(type[0][i] + " ");
 		}
 		System.out.println("");
 		System.out.print(" ");
-		for (int i = 0; i < type[0].length; i++) {
+		for (int i = 0, num = type[0].length; i < num; i++) {
 			System.out.print(type[1][i] + "  ");
 		}
 
@@ -31,7 +31,7 @@ public class DataType {
 	public static int[][] executeClassification() {
 		int type[][] = { { 10, 60, 20, 40, 60, 50, 20, 80, 60, 40 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
 		int max = 0;
-		for (int i = 0; i < type[0].length; i++) {
+		for (int i = 0, num = type[0].length; i < num; i++) {
 			// ナンバリングが空(ゼロ)であれば現状のナンバリング+1を格納
 			if (type[1][i] == 0) {
 				type[1][i] = max + 1;
