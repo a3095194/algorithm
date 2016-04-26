@@ -21,7 +21,7 @@ public class ExchangeSort {
 	 */
 	public static int[] calculateExchange() {
 		int array[] = { 35, 26, 48, 34, 42 };
-		for (int i = 0, num = orgArray.length; i < num; i++) {
+		for (int i = 0, num = array.length; i < num; i++) {
 			for (int j = i + 1; j < num; j++) {
 				if (array[i] < array[j]) {
 					int big = array[j];
