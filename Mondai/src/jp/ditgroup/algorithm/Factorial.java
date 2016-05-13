@@ -35,10 +35,6 @@ public class Factorial {
 		if (count >= 2) {
 			i = value;
 		}
-		// for (int i = 1; i <= value; i++) {
-		// fact = fact * i;
-		// }
-
 		if (i <= j) {
 			i = 0;
 			fact = fact * i;
