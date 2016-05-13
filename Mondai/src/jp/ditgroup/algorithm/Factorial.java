@@ -14,7 +14,8 @@ public class Factorial {
 		if (!NumberUtil.isInt(args[0])) {
 			System.out.println("引数に数字以外の文字列が入力されました");
 		}
-		System.out.println(args[0] + "の階乗は " + getFact(args[0]) + " です");
+		int value = CastUtil.strToInt(args[0]);
+		System.out.println(args[0] + "の階乗は " + calculateFact(value) + " です");
 	}
 
 	/**
@@ -23,13 +24,27 @@ public class Factorial {
 	 * @param コマンドライン引数1
 	 * @return 計算結果
 	 */
-	public static int getFact(String value) {
-		int v = CastUtil.strToInt(value);
+	public static int calculateFact(int value) {
 		int fact = 1;
-
-		for (int i = 1; i <= v; i++) {
-			fact = fact * i;
+		int count = fact;
+		int j = 0;
+		int i = 1;
+		if (count == 1) {
+			j = value;
 		}
+		if (count >= 2) {
+			i = value;
+		}
+		// for (int i = 1; i <= value; i++) {
+		// fact = fact * i;
+		// }
+
+		if (i <= j) {
+			i = 0;
+			fact = fact * i;
+			calculateFact(i + 1);
+		}
+
 		return fact;
 	}
 }
