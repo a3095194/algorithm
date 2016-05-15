@@ -1,11 +1,11 @@
-package jp.ditgroup.algorithm;
+ï»¿package jp.ditgroup.algorithm;
 
 /**
- * ”‚Ì‰ò‚ğ¬‚³‚¢‡‚É•À‚×‘Ö‚¦‚ğ‚·‚éƒNƒ‰ƒX ‰ò‚Ì’†‚Å¬‚³‚¢”‚ğ‡‚ÉŒ©‚Â‚¯‚Ä¶’[‚©‚ç‡‚É‹l‚ß‚Ä‚¢‚«A•À‚×‘Ö‚¦‚éì‹Æ‚ğŒJ‚è•Ô‚µ‚Ü‚·B
+ * æ•°ã®å¡Šã‚’å°ã•ã„é †ã«ä¸¦ã¹æ›¿ãˆã‚’ã™ã‚‹ã‚¯ãƒ©ã‚¹ å¡Šã®ä¸­ã§å°ã•ã„æ•°ã‚’é †ã«è¦‹ã¤ã‘ã¦å·¦ç«¯ã‹ã‚‰é †ã«è©°ã‚ã¦ã„ãã€ä¸¦ã¹æ›¿ãˆã‚‹ä½œæ¥­ã‚’ç¹°ã‚Šè¿”ã—ã¾ã™ã€‚
  */
 public class ShellSort {
 	/**
-	 * Œ‹‰Ê‚Ì”z—ñ‚ğo—Í
+	 * çµæœã®é…åˆ—ã‚’å‡ºåŠ›
 	 */
 	public static void main(String[] args) {
 		int type[] = calculateShell();
@@ -15,24 +15,35 @@ public class ShellSort {
 	}
 
 	/**
-	 * ”z—ñ‚ğ¬‚³‚¢‡‚É•À‚×‘Ö‚¦
+	 * é…åˆ—ã‚’å°ã•ã„é †ã«ä¸¦ã¹æ›¿ãˆ
 	 *
-	 * @return array •À‚×‘Ö‚¦Œã‚Ì”z—ñ
+	 * @return array ä¸¦ã¹æ›¿ãˆå¾Œã®é…åˆ—
 	 */
 	public static int[] calculateShell() {
-		int array[] = { 35, 26, 48, 34, 42 };
-		for (int i = 0, length = array.length; i < length; i++) {
-			int min = i;
-			for (int j = i + 1; j < length; j++) {
-				if (array[min] > array[j]) {
-					min = j;
+		int array[] = { 35, 26, 48, 34, 42, 55, 10, 12, 1, 67, 62 };
+		int range = array.length / 2;
+		while (range > 0) {
+			int i = 0;
+			int j = i + range;
+			while (j < array.length) {
+				if (array[i] < array[j]) {
+					// äº¤æ›ãŒå¿…è¦ãªæ™‚
+					int big = array[j];
+					int small = array[i];
+					array[i] = big;
+					array[j] = small;
+					if (i - range >= 0) {
+						// å¹…åˆ†æˆ»ã‚ŒãŸã‚‰æˆ»ã‚‹
+						i = i - range;
+						j = j - range;
+					}
+				} else {
+					// äº¤æ›ã§ããªã„
+					i = i + 1;
+					j = i + range;
 				}
 			}
-			if (min != i) {
-				int tmp = array[min];
-				array[min] = array[i];
-				array[i] = tmp;
-			}
+			range = range / 2;
 		}
 		return array;
 	}
