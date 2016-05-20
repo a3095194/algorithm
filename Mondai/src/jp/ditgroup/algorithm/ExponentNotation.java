@@ -28,17 +28,15 @@ public class ExponentNotation {
 	public static double[] getExponentNotation(String real) {
 		int multiplier = 0;
 		double r = CastUtil.strToDouble(real);
-
-		if (r >= 1.0) {
-			while (r < 0.1 || 1.0 < r) {
+		while (r < 0.1 || 1.0 < r) {
+			if (r >= 1.0) {
 				r = r / 10;
 				multiplier = multiplier + 1;
+			} else {
+				r = r * 10;
+				multiplier = multiplier - 1;
 			}
-		} else {
-			r = r * 10;
-			multiplier = multiplier - 1;
 		}
-
 		double result[] = { r, multiplier };
 		return result;
 	}
