@@ -1,0 +1,11 @@
+.metadata/
+.metadata/.plugins/org.eclipse.jdt.core/3778746985.index
+.metadata/.plugins/org.eclipse.jdt.core/587362599.index
+.recommenders/
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/index-0.0.0-20140605.014212-1.zip
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/maven-metadata-models.xml
+Mondai/.settings/org.eclipse.core.resources.prefs
+RemoteSystemsTempFiles/
+Mondai/.settings/org.eclipse.jdt.core.prefs
+Mondai/.project
+Mondai/.classpath

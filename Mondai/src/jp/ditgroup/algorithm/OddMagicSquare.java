@@ -16,7 +16,7 @@ public class OddMagicSquare {
 
 	public static int[][] getMagicSquare() {
 		int t[][] = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
-		int n = t[1].length - 1;
+		int n = t.length - 1;
 		int value, x, y;
 		x = n / 2 + 1;
 		y = 1;
