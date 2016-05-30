@@ -16,12 +16,8 @@ public class BinarySearch {
 
 	/**
 	 * 二分探索を実行
-	 * 
+	 *
 	 * @param コマンドライン引数1
-	 * @param big
-	 *            配列の上端
-	 * @param small
-	 *            配列の下端
 	 * @return 見つけたデータの格納場所
 	 */
 	public static int getMatchNum(String keyNum) {
