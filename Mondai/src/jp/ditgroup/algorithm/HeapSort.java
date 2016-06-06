@@ -1,4 +1,4 @@
-package jp.ditgroup.algorithm;
+ï»¿package jp.ditgroup.algorithm;
 
 import java.util.ArrayList;
 
@@ -8,28 +8,28 @@ import jp.ditgroup.common.NumberUtil;
 public class HeapSort {
 
 	/**
-	 * “ü—Íƒ`ƒFƒbƒNŒãAArrayList”z—ñ‚Æ‚µ‚Ä‘g‚İ—§‚Ä‚é ‚Ü‚½Œ‹‰Ê‚Ìo—Í‚às‚¤
+	 * å…¥åŠ›ãƒã‚§ãƒƒã‚¯å¾Œã€ArrayListé…åˆ—ã¨ã—ã¦çµ„ã¿ç«‹ã¦ã‚‹ ã¾ãŸçµæœã®å‡ºåŠ›ã‚‚è¡Œã†
 	 */
 	public static void main(String[] args) {
-		// •À‚×‘Ö‚¦‘O‚Ì”z—ñ‚ğo—Í
-		System.out.print("•À‚×‘Ö‚¦‘OF");
+		// ä¸¦ã¹æ›¿ãˆå‰ã®é…åˆ—ã‚’å‡ºåŠ›
+		System.out.print("ä¸¦ã¹æ›¿ãˆå‰ï¼š");
 		for (String a : args) {
 			System.out.print(a + " ");
 		}
 		System.out.println();
 		ArrayList<Integer> orgArray = new ArrayList<Integer>();
-		// root‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ[1]‚Æ‚·‚éˆ×A“ª‚Éƒ_ƒ~[ƒf[ƒ^‚ğ“ü‚ê‚é
+		// rootã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’[1]ã¨ã™ã‚‹ç‚ºã€é ­ã«ãƒ€ãƒŸãƒ¼ãƒ‡ãƒ¼ã‚¿ã‚’å…¥ã‚Œã‚‹
 		orgArray.add(999);
 		for (int i = 0, length = args.length; i < length; i++) {
-			// ”š‚Ì‚İ‚Å‚ ‚é‚©‚Ì“ü—Íƒ`ƒFƒbƒN
+			// æ•°å­—ã®ã¿ã§ã‚ã‚‹ã‹ã®å…¥åŠ›ãƒã‚§ãƒƒã‚¯
 			if (!NumberUtil.isInt(args[i])) {
-				System.out.println("”šˆÈŠO‚ª“ü—Í‚³‚ê‚Ü‚µ‚½");
+				System.out.println("æ•°å­—ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ");
 			}
-			// “ü—Í‚³‚ê‚½”š‚ğString‚©‚çint‚ÖŒ^•ÏŠ·ŒãAArrayList‚É‹l‚ß‚é
+			// å…¥åŠ›ã•ã‚ŒãŸæ•°å­—ã‚’Stringã‹ã‚‰intã¸å‹å¤‰æ›å¾Œã€ArrayListã«è©°ã‚ã‚‹
 			orgArray.add(CastUtil.strToInt(args[i]));
 		}
-		// ó‚¯æ‚Á‚½ƒ\[ƒgÏ‚İ‚Ì”z—ñ‚ğo—Í
-		System.out.print("•À‚×‘Ö‚¦ŒãF");
+		// å—ã‘å–ã£ãŸã‚½ãƒ¼ãƒˆæ¸ˆã¿ã®é…åˆ—ã‚’å‡ºåŠ›
+		System.out.print("ä¸¦ã¹æ›¿ãˆå¾Œï¼š");
 		ArrayList<Integer> newArray = calculateHeap(orgArray);
 		for (int i = 1, size = newArray.size(); i < size; i++) {
 			System.out.print(newArray.get(i) + " ");
@@ -38,7 +38,7 @@ public class HeapSort {
 
 	public static ArrayList<Integer> calculateHeap(ArrayList<Integer> orgArray) {
 		for (int i = orgArray.size() - 1; i >= 1; i--) {
-			int parent = 1; // ‚±‚±‚ğ1‚É‚·‚é‚Æ’¸“_‚ª‚¢‚Â‚Ü‚ÅŒo‚Á‚Ä‚à•Ï‚¦‚ç‚ê‚È‚¢‚ªA0‚É‚·‚é‚Æq‚ÌêŠ‚ª³Šm‚É‚Æ‚ê‚È‚¢
+			int parent = 1; // ã“ã“ã‚’1ã«ã™ã‚‹ã¨é ‚ç‚¹ãŒã„ã¤ã¾ã§çµŒã£ã¦ã‚‚å¤‰ãˆã‚‰ã‚Œãªã„ãŒã€0ã«ã™ã‚‹ã¨å­ã®å ´æ‰€ãŒæ­£ç¢ºã«ã¨ã‚Œãªã„
 			while (parent <= i / 2) {
 				int childLeft = parent * 2;
 				int rightNode = parent * 2 + 1;
@@ -62,6 +62,7 @@ public class HeapSort {
 					parent++;
 				}
 			}
+			// ãƒ’ãƒ¼ãƒ—æ§‹é€ ãŒå®Œæˆã—ãŸã®ã§ä¸Šç«¯ã¨ä¸‹ç«¯ã®ãƒ‡ãƒ¼ã‚¿ã‚’äº¤æ›ã™ã‚‹
 			int temp = orgArray.get(1);
 			orgArray.set(1, orgArray.get(i));
 			orgArray.set(i, temp);
