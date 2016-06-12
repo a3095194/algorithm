@@ -21,17 +21,17 @@ public class HeapSort {
 			if (!NumberUtil.isInt(args[i])) {
 				System.out.println("数字以外が入力されました");
 			}
-			// 入力された数字をStringからintへ型変換
-			int data = CastUtil.strToInt(args[i]);
-			// 変換した数字をList型配列に入れる
-			orgArray.add(i, data);
 		}
+		for (int j = 0, length = args.length; j < length; j++) {
+			// 入力された数字をStringからintへ型変換後、配列へ詰める
+			orgArray.add(CastUtil.strToInt(args[j]));
+		}
+		// ソート済みの配列を格納
+		ArrayList<Integer> sortedHeapArray = sortingHeap(orgArray);
 		System.out.print("並べ替え前：");
 		// 並べ替え前の配列を出力
 		arrayPrintln(orgArray);
 		System.out.print("並べ替え後：");
-		// ソート済みの配列を格納
-		ArrayList<Integer> sortedHeapArray = sortingHeap(orgArray);
 		// 並べ替え後の配列を出力
 		arrayPrintln(sortedHeapArray);
 	}
@@ -45,7 +45,7 @@ public class HeapSort {
 	 */
 	private static ArrayList<Integer> sortingHeap(ArrayList<Integer> orgArray) {
 		// 編集用のList型配列を作成
-		ArrayList<Integer> editingArray = orgArray;
+		ArrayList<Integer> editingArray = new ArrayList<Integer>(orgArray);
 		// 最初に入力されたデータのインデックスを[1]とするため[0]へダミーデータを格納
 		editingArray.add(0, 999);
 		for (int i = editingArray.size() - 1; i >= 1; i--) {
@@ -92,6 +92,6 @@ public class HeapSort {
 		for (int i = 0, size = array.size(); i < size; i++) {
 			System.out.print(array.get(i) + " ");
 		}
-		System.out.println(" ");
+		System.out.println("");
 	}
 }
