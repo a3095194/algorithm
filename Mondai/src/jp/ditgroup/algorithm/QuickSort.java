@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import jp.ditgroup.common.CastUtil;
 import jp.ditgroup.common.NumberUtil;
-import jp.ditgroup.common.Replace;
+import jp.ditgroup.common.ReplaceValue;
 
 public class QuickSort {
 
@@ -67,7 +67,7 @@ public class QuickSort {
 				break;
 			}
 			// データの入れ替え
-			Replace.doReplace(array, i, j);
+			ReplaceValue.doReplace(array, i, j);
 			i++;
 			j--;
 		}
