@@ -1,6 +1,6 @@
 ﻿package jp.ditgroup.common;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ReplaceValue {
 	/**
@@ -14,7 +14,7 @@ public class ReplaceValue {
 	 *            大きいデータのインデックス
 	 * @return 入れ替え後の配列
 	 */
-	public static ArrayList<Integer> doReplace(ArrayList<Integer> array, int first, int second) {
+	public static List<Integer> doReplace(List<Integer> array, int first, int second) {
 		int temp = array.get(first);
 		array.set(first, array.get(second));
 		array.set(second, temp);
