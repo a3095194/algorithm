@@ -17,7 +17,7 @@ public class DefiniteIntegral {
 		}
 		// 区間幅をコマンドライン引数からString→double変換して取得
 		double secRange = CastUtil.strToDouble(args[0]);
-		if (secRange != 0.0) {
+		if (secRange > 0.0) {
 			// 台形の公式を使った定積分の結果を取得
 			double answer = calculateDefiniteIntegral(secRange);
 			if (answer != 0.0) {
