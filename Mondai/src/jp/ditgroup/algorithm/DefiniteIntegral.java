@@ -11,9 +11,9 @@ public class DefiniteIntegral {
 	 *            コマンドライン引数(任意の区間幅)
 	 */
 	public static void main(String[] args) {
-		// 数字であるかの入力チェック
-		if (!NumberUtil.isDouble(args[0])) {
-			System.out.println("数字以外もしくは整数が入力されました");
+		// 正の数であるかの入力チェック
+		if (!NumberUtil.isDouble(args[0]) || !NumberUtil.isPositiveNumber(args[0])) {
+			System.out.println("「" + args[0] + "」" + "という" + "数字以外もしくは負の数が入力されました");
 		}
 		// 区間幅をコマンドライン引数からString→double変換して取得
 		double secRange = CastUtil.strToDouble(args[0]);
@@ -23,7 +23,7 @@ public class DefiniteIntegral {
 			if (answer != 0.0) {
 				System.out.println(answer);
 			} else {
-				System.out.println("入力した区間幅は積分区間をオーバーしています");
+				System.out.println("入力した区間幅" + "「" + args[0] + "」" + "は積分区間をオーバーしています。「1.0」以下「0.0」以上を入力してください");
 			}
 		} else {
 			System.out.println("0.0より大きい小数を入力して下さい");
