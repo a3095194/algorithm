@@ -42,4 +42,16 @@ public class NumberUtil {
 			return false;
 		}
 	}
+
+	public static boolean isPositiveNumber(String str) {
+		try {
+			Double.parseDouble(str);
+			if (Double.parseDouble(str) >= 0) {
+				return true;
+			}
+			return false;
+		} catch (NumberFormatException e) {
+			return false;
+		}
+	}
 }
