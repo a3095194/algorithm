@@ -15,43 +15,40 @@ public class SpecificRanking {
 	 * @param コマンドライン引数(任意の順位)
 	 */
 	public static void main(String[] args) {
+		int data[] = { 49, 32, 11, 90, 31, 75, 58, 46, 12 };
 		List<Integer> array = new ArrayList<Integer>();
-		array.add(49);
-		array.add(32);
-		array.add(11);
-		array.add(90);
-		array.add(31);
-		array.add(75);
-		array.add(58);
-		array.add(46);
-		array.add(12);
+		for (int i = 0, length = data.length; i < length; i++) {
+			array.add(data[i]);
+		}
 		// 数字であるかの入力チェック
 		if (!NumberUtil.isInt(args[0])) {
-			System.out.println("数字以外が入力されました");
-		}
-		// 0(ゼロ)でないかの入力チェック
-		if (!NumberUtil.isNotZero(args[0])) {
+			System.out.println("「" + args[0] + "」" + "という" + "数字以外が入力されました");
+			// 0(ゼロ)でないかの入力チェック
+		} else if (!NumberUtil.isNotZero(args[0])) {
 			System.out.println("0(ゼロ)が入力されました");
-		}
-		// 入力された数字をStringからintへ型変換
-		int rank = CastUtil.strToInt(args[0]);
-		// 元となるデータの配列を出力
-		arrayPrintln(array);
-		// 入力された数字がデータ数以上の値だった時
-		if (rank > array.size()) {
-			System.out.println("上記のデータ数しか存在しないため" + rank + "位は存在しえません");
-
+			// 負の値でないかの入力チェック
+		} else if (!NumberUtil.isPositiveNumber(args[0])) {
+			System.out.println("「" + args[0] + "」" + "という" + "マイナスの値が入力されました");
 		} else {
-			// 入力した順位にあるデータを取得
-			int matchRankData = serchMatchData(array, rank - 1);
-			// 結果の出力
-			System.out.println("上記のデータのうち「" + rank + "位」は「" + matchRankData + "」です");
+			// 入力された数字をStringからintへ型変換
+			int rank = CastUtil.strToInt(args[0]);
+			// 元となるデータの配列を出力
+			arrayPrintln(array);
+			// 入力された数字がデータ数以上の値だった時
+			if (rank > array.size()) {
+				System.out.println("上記のデータ数しか存在しないため" + rank + "位は存在しえません");
+			} else {
+				// 入力した順位にあるデータを取得
+				int matchRankData = serchMatchData(array, rank - 1);
+				// 結果の出力
+				System.out.println("上記のデータのうち「" + rank + "位」は「" + matchRankData + "」です");
+			}
 		}
 	}
 
 	private static int serchMatchData(List<Integer> array, int rank) {
 		boolean ctl = false;
-		int data = array.get(rank);
+		int data = 0;
 		do {
 			ctl = false;
 			for (int i = 0, size = array.size(); i < size; i++) {
